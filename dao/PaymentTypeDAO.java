@@ -8,13 +8,14 @@ import java.util.*;
 public class PaymentTypeDAO {
     public List<PaymentType> getAll() {
         List<PaymentType> list = new ArrayList<>();
-        String sql = "SELECT * FROM payment_type";
-        try (Connection conn = DBConnection.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+        String sql = "SELECT * FROM loai_thanh_toan";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 PaymentType pt = new PaymentType();
                 pt.setId(rs.getInt("id"));
-                pt.setTypeName(rs.getString("type_name"));
+                pt.setTenLoai(rs.getString("ten_loai"));
                 list.add(pt);
             }
         } catch (Exception e) {

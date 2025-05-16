@@ -2,31 +2,31 @@ package model;
 
 public class RentRoom {
     private int id;
-    private String tenantName;
-    private String phoneNumber;
-    private String startDate;
-    private int paymentTypeId;
-    private String paymentTypeName;
-    private String note;
+    private String tenNguoiThue;
+    private String soDienThoai;
+    private String ngayBatDau;
+    private int idHinhThucThanhToan;
+    private String tenLoaiThanhToan;
+    private String ghiChu;
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
-    public String getTenantName() { return tenantName; }
-    public void setTenantName(String tenantName) { this.tenantName = tenantName; }
+    public String getTenNguoiThue() { return tenNguoiThue; }
+    public void setTenNguoiThue(String tenNguoiThue) { this.tenNguoiThue = tenNguoiThue; }
 
-    public String getPhoneNumber() { return phoneNumber; }
-    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+    public String getSoDienThoai() { return soDienThoai; }
+    public void setSoDienThoai(String soDienThoai) { this.soDienThoai = soDienThoai; }
 
-    public String getStartDate() { return startDate; }
-    public void setStartDate(String startDate) { this.startDate = startDate; }
+    public String getNgayBatDau() { return ngayBatDau; }
+    public void setNgayBatDau(String ngayBatDau) { this.ngayBatDau = ngayBatDau; }
 
-    public int getPaymentTypeId() { return paymentTypeId; }
-    public void setPaymentTypeId(int paymentTypeId) { this.paymentTypeId = paymentTypeId; }
+    public int getIdHinhThucThanhToan() { return idHinhThucThanhToan; }
+    public void setIdHinhThucThanhToan(int idHinhThucThanhToan) { this.idHinhThucThanhToan = idHinhThucThanhToan; }
 
-    public String getPaymentTypeName() { return paymentTypeName; }
-    public void setPaymentTypeName(String paymentTypeName) { this.paymentTypeName = paymentTypeName; }
+    public String getTenLoaiThanhToan() { return tenLoaiThanhToan; }
+    public void setTenLoaiThanhToan(String tenLoaiThanhToan) { this.tenLoaiThanhToan = tenLoaiThanhToan; }
 
-    public String getNote() { return note; }
-    public void setNote(String note) { this.note = note; }
+    public String getGhiChu() { return ghiChu; }
+    public void setGhiChu(String ghiChu) { this.ghiChu = ghiChu; }
 }
