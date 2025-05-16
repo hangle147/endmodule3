@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng kí thuê phòng</title>
+</head>
+<body>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th><input type="checkbox" id="selectAll"></th>
+        <th>Mã phòng</th>
+        <th>Tên người thuê</th>
+        <th>SĐT</th>
+        <th>Ngày bắt đầu</th>
+        <th>Thanh toán</th>
+        <th>Ghi chú</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="room" items="${listRoom}">
+        <tr>
+            <td><input type="checkbox" name="roomId" value="${room.id}"></td>
+            <td>PT-${room.id}</td>
+            <td>${room.tenantName}</td>
+            <td>${room.phoneNumber}</td>
+            <td>${room.startDate}</td>
+            <td>${room.paymentType}</td>
+            <td>${room.note}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+
+<form method="post" action="CreateRoomServlet">
+    <input name="tenantName" required pattern="[A-Za-z\s]{5,50}">
+    <input name="phoneNumber" required pattern="\d{10}">
+    <input name="startDate" required type="date" min="${today}">
+    <select name="paymentTypeId" required>
+        <c:forEach var="type" items="${paymentTypes}">
+            <option value="${type.id}">${type.typeName}</option>
+        </c:forEach>
+    </select>
+    <textarea name="note" maxlength="200"></textarea>
+    <button type="submit">Tạo mới</button>
+</form>
+</body>
+</html>
